@@ -1,0 +1,12 @@
+{
+	"create-jar": {
+		"output-dir": "dist",
+		"features": {
+			"js-extender": true,
+			"web-context": "/test1",
+			"localization": "features/localization/Language"
+		}
+	},
+	"dump-report": true,
+	"process-serially" : true 
+}

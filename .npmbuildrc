@@ -1,0 +1,18 @@
+{
+	"translatorTextKey": "",
+	"supportedLocales": [],
+	"liferayDir": "/home/oharrari/TliferayDemo/liferay-dxp-7.1.10.2-sp2",
+	"webpack": {
+		"rules": [
+			{
+				"test": "src\\/.*\\.ts$",
+				"use": "ts-loader"
+			}
+		],
+		"extensions": [
+			".ts",
+			".js"
+		],
+		"mainModule": "index.ts"
+	}
+}

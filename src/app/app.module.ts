@@ -1,29 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatNativeDateModule } from '@angular/material';
-
+import { MatButtonModule, MatCheckboxModule, MatStepperModule, MatFormFieldModule, MatInputModule } from '@angular/material'
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-	imports: [BrowserModule,
-		BrowserAnimationsModule,
-		NoopAnimationsModule,
+	imports: [
+		BrowserModule,
 		MatButtonModule,
 		MatCheckboxModule,
-		BrowserModule,
-		BrowserAnimationsModule,
-		FormsModule,
-		HttpClientModule,
-		MatNativeDateModule,
-		ReactiveFormsModule,],
+		MatStepperModule,
+		ReactiveFormsModule,
+		MatFormFieldModule,
+		MatInputModule,
+		BrowserAnimationsModule
+	],
 	declarations: [AppComponent],
 	entryComponents: [AppComponent],
 	bootstrap: [], // Don't bootstrap any component statically (see ngDoBootstrap() below)
-	providers: [],
+	providers: [FormBuilder],
 })
 export class AppModule {
 	// Avoid bootstraping any component statically because we need to attach to

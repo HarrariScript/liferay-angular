@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import LiferayParams from '../types/LiferayParams'
 
@@ -7,20 +8,19 @@ declare const Liferay: any;
 @Component({
 	templateUrl: '/o/test1/app/app.component.html'
 })
-export class AppComponent {
-	params: LiferayParams;
-	labels: any;
+export class AppComponent implements OnInit {
+	isLinear = false;
+	firstFormGroup: FormGroup;
+	secondFormGroup: FormGroup;
 
-	constructor() {
-		this.labels = {        
-			
-			portletNamespace: Liferay.Language.get('portlet-namespace'),
-        	contextPath: Liferay.Language.get('context-path'),
-			portletElementId: Liferay.Language.get('portlet-element-id'),
-		}
-	}
+	constructor(private _formBuilder: FormBuilder) { }
 
-	get configurationJSON() {
-		return JSON.stringify(this.params.configuration, null, 2);
+	ngOnInit() {
+		this.firstFormGroup = this._formBuilder.group({
+			firstCtrl: ['', Validators.required]
+		});
+		this.secondFormGroup = this._formBuilder.group({
+			secondCtrl: ['', Validators.required]
+		});
 	}
 }
